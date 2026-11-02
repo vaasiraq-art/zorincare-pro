@@ -1,0 +1,34 @@
+name: Ubuntu 24.04 / Zorin 18 CI & .deb Verification
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify-ubuntu-2404:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run unit test suite
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Build Debian package (.deb)
+        run: python3 scripts/build_deb.py
+
+      - name: Test real .deb installation on Ubuntu 24.04 Noble (Zorin OS 18.1 base)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ./dist/zorincare-pro_1.0.0_all.deb
+          zorincare-pro --version
+          zorincare-pro --cli-scan
+
+      - name: Upload .deb package artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: zorincare-pro-deb
+          path: dist/*.deb

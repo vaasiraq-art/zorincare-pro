@@ -1,0 +1,12 @@
+# Enforce Unix LF line endings across all scripts, Python sources, and Linux metadata
+* text=auto eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+*.desktop text eol=lf
+*.policy text eol=lf
+*.svg text eol=lf
+*.md text eol=lf
+*.toml text eol=lf
+*.json text eol=lf
+*.deb binary
+*.png binary

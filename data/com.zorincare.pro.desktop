@@ -1,0 +1,16 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=ZorinCare Pro
+Name[ar]=زورين كير برو (ZorinCare Pro)
+GenericName=System Optimizer & Driver Booster
+GenericName[ar]=محسّن النظام ومحدّث التعريفات وحاذف البرامج الجذري
+Comment=All-in-One System Care, Driver Booster, Deep Revo-Style Uninstaller & PC Control Center for Zorin OS 18.1 Pro
+Comment[ar]=العناية الشاملة بالنظام، تحديث التعريفات، الحذف الجذري للبرامج مع البقايا، والتحكم الكامل بالحاسوب لنظام Zorin OS 18.1 Pro
+Exec=/usr/bin/zorincare-pro
+Icon=com.zorincare.pro
+Terminal=false
+Categories=System;Settings;Monitor;PackageManager;Utility;
+Keywords=optimizer;cleaner;driver;booster;uninstaller;revo;leftovers;ram;zorin;control;
+StartupNotify=true
+StartupWMClass=com.zorincare.pro

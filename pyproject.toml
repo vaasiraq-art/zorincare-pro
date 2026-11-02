@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zorincare-pro"
+version = "1.0.0"
+description = "All-in-One System Optimizer, Driver Booster, Deep Uninstaller & PC Control Center for Zorin OS 18.1 Pro"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [
+    { name = "ZorinCare Pro Contributors" }
+]
+keywords = ["linux", "zorin-os", "ubuntu", "optimizer", "driver-booster", "uninstaller", "gtk4", "libadwaita"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: X11 Applications :: GTK",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+]
+
+[project.scripts]
+zorincare-pro = "zorincare.main:main"
+
+[tool.setuptools.packages.find]
+include = ["zorincare*"]

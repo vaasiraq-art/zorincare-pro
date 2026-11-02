@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
+<policyconfig>
+  <vendor>ZorinCare Pro</vendor>
+  <vendor_url>https://github.com/vaasiraq-art/zorincare-pro</vendor_url>
+  <icon_name>com.zorincare.pro</icon_name>
+
+  <action id="com.zorincare.pro.root-helper">
+    <description>Run privileged system maintenance, driver updates, and deep cleanup via ZorinCare Pro</description>
+    <description xml:lang="ar">تشغيل مهام صيانة النظام وتحديث التعريفات والتنظيف الجذري عبر ZorinCare Pro</description>
+    <message>Authentication is required for ZorinCare Pro to perform system-level maintenance, driver installation, or deep cleanup.</message>
+    <message xml:lang="ar">يلزم إدخال كلمة المرور للسماح لبرنامج ZorinCare Pro بتنفيذ صيانة النظام أو تثبيت التعريفات أو التنظيف الجذري.</message>
+    <defaults>
+      <allow_any>auth_admin</allow_any>
+      <allow_inactive>auth_admin</allow_inactive>
+      <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/lib/zorincare-pro/zorincare-root-helper</annotate>
+    <annotate key="org.freedesktop.policykit.exec.allow_gui">false</annotate>
+  </action>
+</policyconfig>
